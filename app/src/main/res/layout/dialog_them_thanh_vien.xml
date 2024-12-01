@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:padding="10dp"
+    android:backgroundTint="#F3E1B5"
+    android:layout_margin="10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Them Thanh Vien moi"
+            android:textStyle="bold"
+            android:textColor="#00FF01"
+            android:textAllCaps="true"
+            android:textSize="24sp"/>
+
+        <EditText
+            android:id="@+id/edtHoTen"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhap ho ten"
+            android:background="@drawable/custom_edittext"/>
+
+        <EditText
+            android:id="@+id/edtNamSinh"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhap nam sinh"
+            android:background="@drawable/custom_edittext"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btnThem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Them"
+                android:backgroundTint="#284FF1"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Huy"
+                android:backgroundTint="@color/black"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btnHuy"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

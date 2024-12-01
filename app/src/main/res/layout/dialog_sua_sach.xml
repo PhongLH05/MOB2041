@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:backgroundTint="#9FEDED">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Them sach moi"
+            android:textColor="#E604FF"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtMaSach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:layout_marginTop="5dp"
+            android:id="@+id/edtTenSach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhap ten sach"
+            android:background="@drawable/custom_edittext"/>
+
+        <EditText
+            android:layout_marginTop="5dp"
+            android:id="@+id/edtTacGia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhap tac gia"
+            android:background="@drawable/custom_edittext"/>
+
+
+        <EditText
+            android:id="@+id/edtGia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhap gia ban"
+            android:background="@drawable/custom_edittext"
+            android:layout_marginTop="5dp"/>
+
+        <Spinner
+            android:layout_marginTop="5dp"
+            android:id="@+id/spnLoaiSach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btnSua"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sua"
+                android:backgroundTint="#284FF1"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Huy"
+                android:backgroundTint="@color/black"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btnHuy"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
