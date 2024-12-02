@@ -18,17 +18,20 @@
             android:id="@+id/txtMaSach"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             />
 
         <TextView
             android:id="@+id/txtSach"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/txtSoLuongMuon"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="20sp"/>
 
     </LinearLayout>
 

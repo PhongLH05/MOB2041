@@ -49,6 +49,7 @@ public class SachAdapterr extends RecyclerView.Adapter<SachAdapterr.ViewHolder>{
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        SachDao dao = new SachDao(context);
         holder.txtSach.setText("ID: " + lst.get(position).getMaSach());
         holder.txtTenSach.setText(lst.get(position).getTenSach());
         holder.txtGia.setText(String.valueOf(lst.get(position).getGiaBan()));
@@ -59,7 +60,20 @@ public class SachAdapterr extends RecyclerView.Adapter<SachAdapterr.ViewHolder>{
         });
 
         holder.imgDel.setOnClickListener(view -> {
-
+            int check = dao.deleteSach(lst.get(holder.getAdapterPosition()).getMaSach());
+            switch (check){
+                case 1:
+                    Toast.makeText(context, "Xoa Thanh Cong", Toast.LENGTH_SHORT).show();
+                    loadData();
+                    break;
+                case 0:
+                    Toast.makeText(context, "Xoa khong thanh cong", Toast.LENGTH_SHORT).show();
+                    break;
+                case -1:
+                    Toast.makeText(context, "Khong xoa duoc vi trung lap phieu muon", Toast.LENGTH_SHORT).show();
+                default:
+                    break;
+            }
         });
     }
 
@@ -141,6 +155,10 @@ public class SachAdapterr extends RecyclerView.Adapter<SachAdapterr.ViewHolder>{
             }else {
                 Toast.makeText(context , "Cap nhat khong thanh cong", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        btnHuy.setOnClickListener(view1 -> {
+            alertDialog.dismiss();
         });
 
     }

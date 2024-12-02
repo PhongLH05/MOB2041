@@ -104,10 +104,10 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
+                }else {
+
                 }
-                else {
-                    fragment = new QuanLySachFragment();
-                }
+
                 getSupportFragmentManager().beginTransaction().replace(R.id.linerlayout, fragment).commit();
                 getSupportActionBar().setTitle(item.getTitle());
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -125,13 +125,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START))
-            drawerLayout.closeDrawer(GravityCompat.START);
-        else
-             super.onBackPressed();
-    }
 
     public void showDialogDoiMatKhau(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
