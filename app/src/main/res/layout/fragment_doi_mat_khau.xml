@@ -40,9 +40,18 @@
             android:id="@+id/edtReNewPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nhaplai  mat khau moi"
+            android:hint="Nhap lai  mat khau moi"
             android:background="@drawable/custom_edittext"
             android:layout_marginTop="5dp"/>
+
+
+            <Button
+                android:id="@+id/btnDoimatKhau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Doi mat khau"
+                android:backgroundTint="#284FF1"/>
 
 
 

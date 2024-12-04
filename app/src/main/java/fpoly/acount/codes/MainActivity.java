@@ -25,6 +25,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import fpoly.acount.codes.DAO.ThuThuDAO;
 import fpoly.acount.codes.fragment.DoanhThuFragment;
+import fpoly.acount.codes.fragment.DoiMatKhauFragment;
 import fpoly.acount.codes.fragment.QuanLyLoaiSachFragment;
 import fpoly.acount.codes.fragment.QuanLyPhieuMuonFragment;
 import fpoly.acount.codes.fragment.QuanLySachFragment;
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.mDoanhThu) {
                     fragment = new DoanhThuFragment();
                 } else if (item.getItemId() == R.id.mDoiMatKhau) {
-                    showDialogDoiMatKhau();
+                    fragment = new DoiMatKhauFragment();
                 } else if (item.getItemId() == R.id.mDangXuat) {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -126,43 +127,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void showDialogDoiMatKhau(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                .setNegativeButton("Cap nhat", null)
-                .setPositiveButton("Huy", null);
-        LayoutInflater inflater = getLayoutInflater();
-        View view = inflater.inflate(R.layout.dialog_doi_mat_khau, null);
-        EditText edtOldPass = view.findViewById(R.id.edtOldPass);
-        EditText edtNewPass = view.findViewById(R.id.edtNewPass);
-        EditText edtReNewPass = view.findViewById(R.id.edtReNewPass);
 
-        builder.setView(view);
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.setCancelable(false);
-        alertDialog.show();
-
-        alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener(view1 -> {
-            String oldPass = edtOldPass.getText().toString();
-            String NewPass = edtNewPass.getText().toString();
-            String ReNewPass = edtReNewPass.getText().toString();
-            SharedPreferences sharedPreferences = getSharedPreferences("info", MODE_PRIVATE);
-            String matt = sharedPreferences.getString("matt", "");
-            if (NewPass.equals(ReNewPass)){
-                ThuThuDAO thuThuDAO = new ThuThuDAO(MainActivity.this);
-                boolean check = thuThuDAO.UpdatePass(matt, oldPass, NewPass);
-                if (check){
-                    Toast.makeText(MainActivity.this, "Cap nhat thanh cong", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                }else {
-                    Toast.makeText(MainActivity.this, "Cap nhat that bai", Toast.LENGTH_SHORT).show();
-                }
-            }else {
-                Toast.makeText(MainActivity.this, "Mat khau khong trung voi nhau", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
 }
